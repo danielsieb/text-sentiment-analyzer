@@ -9,31 +9,11 @@ const checkFirewords = async (input) => {
 
   await delay(1000);
 
-  // List of possible firewords --> can be extended down below
-  const possibleFirewords = ['kill', 'killing', 'killed', 'kills', 'die', 'dying', 'dead', 'death', 'died', 'dies',
-                            'suicide', 'suicidal', 'hate myself', 'hated myself', 'hates myself', 'hating myself',
-                            'blow up', 'blew up', 'blows up', 'blowing up', 'blown up']
-
-  var firewordList = []
-
-  for (var index in possibleFirewords) {
-
-    if (input.includes(possibleFirewords[index])) {
-      
-      firewordList.push({
-        phrase: possibleFirewords[index],
-        location: input.indexOf(possibleFirewords[index])
-      })
-
-    }
-
-  }
-
-/***************************************************************************/
-/*  The following part is an API call to the Google NLP API which returns  */
-/*  a sentiment score of the text. The API key is open for simplification  */
-/*  purposes. --> Testing only                                             */
-/***************************************************************************/
+  /***************************************************************************/
+  /*  The following part is an API call to the Google NLP API which returns  */
+  /*  a sentiment score of the text. The API key is open for simplification  */
+  /*  purposes. --> Testing only                                             */
+  /***************************************************************************/
 
   var sentimentScore = null
   var sentiment = null
@@ -69,13 +49,11 @@ const checkFirewords = async (input) => {
 
     console.log(err)
 
-  }
+    return null
 
-  if (firewordList.length !== 0 ) {
-    return [firewordList, sentiment]
   }
   
-  return [null, null]
+  return sentiment
 
 } // checkFireworks async (input)
 
