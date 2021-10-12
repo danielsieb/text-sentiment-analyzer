@@ -12,7 +12,7 @@ import {
   Divider,
 } from 'semantic-ui-react'
 
-import checkFirewords from './check-firewords'
+import checkSentiment from './check-sentiment'
 import getSampleText from './sample-text'
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
     }
     setIsChecking(true)
     setHasSubmitted(false)
-    const [ fireWordError, firewordResult ] = await to(checkFirewords(fieldText))
+    const [ fireWordError, firewordResult ] = await to(checkSentiment(fieldText))
     if (fireWordError) {
       throw fireWordError
     }

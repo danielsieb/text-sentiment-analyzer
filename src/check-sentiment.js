@@ -5,7 +5,7 @@ import delay from 'delay'
 //        - Must return null/undefined/false if no dangerous language was detected
 //        - Must return an array of objects containing the matching dangerous language and the location of the match if dangerous language was found
 //        - Must remain an async function
-const checkFirewords = async (input) => {
+const checkSentiment = async (input) => {
 
   await delay(1000);
 
@@ -57,4 +57,4 @@ const checkFirewords = async (input) => {
 
 } // checkFireworks async (input)
 
-export default checkFirewords
+export default checkSentiment
